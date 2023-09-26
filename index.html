@@ -1,138 +1,893 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
+      ::after,
+      ::before {
+        --tw-content: '';
+      }
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+          'Noto Color Emoji';
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+      }
+      body {
+        margin: 0;
+        line-height: inherit;
+      }
+      hr {
+        height: 0;
+        color: inherit;
+        border-top-width: 1px;
+      }
+      abbr:where([title]) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      b,
+      strong {
+        font-weight: bolder;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', 'Courier New', monospace;
+        font-size: 1em;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      table {
+        text-indent: 0;
+        border-color: inherit;
+        border-collapse: collapse;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type='button'],
+      [type='reset'],
+      [type='submit'],
+      button {
+        -webkit-appearance: button;
+        background-color: transparent;
+        background-image: none;
+      }
+      :-moz-focusring {
+        outline: auto;
+      }
+      :-moz-ui-invalid {
+        box-shadow: none;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type='search'] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      summary {
+        display: list-item;
+      }
+      blockquote,
+      dd,
+      dl,
+      figure,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      p,
+      pre {
+        margin: 0;
+      }
+      fieldset {
+        margin: 0;
+        padding: 0;
+      }
+      legend {
+        padding: 0;
+      }
+      menu,
+      ol,
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      dialog {
+        padding: 0;
+      }
+      textarea {
+        resize: vertical;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+      [role='button'],
+      button {
+        cursor: pointer;
+      }
+      :disabled {
+        cursor: default;
+      }
+      audio,
+      canvas,
+      embed,
+      iframe,
+      img,
+      object,
+      svg,
+      video {
+        display: block;
+        vertical-align: middle;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      [hidden] {
+        display: none;
+      }
+      *,
+      ::before,
+      ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+      .container {
+        width: 100%;
+      }
+      @media (min-width: 640px) {
+        .container {
+          max-width: 640px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+        }
+      }
+      @media (min-width: 1280px) {
+        .container {
+          max-width: 1280px;
+        }
+      }
+      @media (min-width: 1536px) {
+        .container {
+          max-width: 1536px;
+        }
+      }
+      .fixed {
+        position: fixed;
+      }
+      .sticky {
+        position: sticky;
+      }
+      .top-0 {
+        top: 0px;
+      }
+      .mx-2 {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .my-2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .block {
+        display: block;
+      }
+      .flex {
+        display: flex;
+      }
+      .hidden {
+        display: none;
+      }
+      .h-6 {
+        height: 1.5rem;
+      }
+      .h-auto {
+        height: auto;
+      }
+      .w-1\/2 {
+        width: 50%;
+      }
+      .w-6 {
+        width: 1.5rem;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .w-screen {
+        width: 100vw;
+      }
+      .basis-1\/2 {
+        flex-basis: 50%;
+      }
+      .border-separate {
+        border-collapse: separate;
+      }
+      .border-spacing-2 {
+        --tw-border-spacing-x: 0.5rem;
+        --tw-border-spacing-y: 0.5rem;
+        border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+      }
+      .cursor-pointer {
+        cursor: pointer;
+      }
+      .flex-row {
+        flex-direction: row;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-end {
+        justify-content: flex-end;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(1rem * var(--tw-space-x-reverse));
+        margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+      }
+      .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+      }
+      .rounded-2xl {
+        border-radius: 1rem;
+      }
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      .rounded-xl {
+        border-radius: 0.75rem;
+      }
+      .border {
+        border-width: 1px;
+      }
+      .border-4 {
+        border-width: 4px;
+      }
+      .border-sky-400 {
+        --tw-border-opacity: 1;
+        border-color: rgb(56 189 248 / var(--tw-border-opacity));
+      }
+      .bg-\[\#0f172a\] {
+        --tw-bg-opacity: 1;
+        background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+      }
+      .bg-sky-950 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(8 47 73 / var(--tw-bg-opacity));
+      }
+      .p-2 {
+        padding: 0.5rem;
+      }
+      .px-2 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .pl-4 {
+        padding-left: 1rem;
+      }
+      .pr-4 {
+        padding-right: 1rem;
+      }
+      .pt-16 {
+        padding-top: 4rem;
+      }
+      .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .font-\[600\] {
+        font-weight: 600;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .text-sky-100 {
+        --tw-text-opacity: 1;
+        color: rgb(224 242 254 / var(--tw-text-opacity));
+      }
+      .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+      }
+      .opacity-95 {
+        opacity: 0.95;
+      }
+      .transition {
+        transition-property: color, background-color, border-color, fill, stroke,
+          opacity, box-shadow, transform, filter, -webkit-text-decoration-color,
+          -webkit-backdrop-filter;
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter, -webkit-text-decoration-color,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .duration-300 {
+        transition-duration: 300ms;
+      }
+      .hover\:scale-105:hover {
+        --tw-scale-x: 1.05;
+        --tw-scale-y: 1.05;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+          rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+          skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+          scaleY(var(--tw-scale-y));
+      }
+      .hover\:bg-sky-900:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+      }
+      .hover\:text-lg:hover {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .hover\:font-bold:hover {
+        font-weight: 700;
+      }
+      .focus\:outline-none:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+      @media not all and (min-width: 768px) {
+        .max-md\:hidden {
+          display: none;
+        }
+        .max-md\:w-auto {
+          width: auto;
+        }
+        .max-md\:w-screen {
+          width: 100vw;
+        }
+        .max-md\:text-sm {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+        }
+      }
+      @media (min-width: 768px) {
+        .md\:hidden {
+          display: none;
+        }
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('a').on('click', function (event) {
+          if (this.hash !== '') {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                window.location.hash = hash;
+              }
+            );
+          }
+        });
+      });
+    </script>
+    <title>Biodata</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Biodata</title>
-</head>
-
-<body>
-  <div class="w-screen h-auto flex justify-center flex-col items-center space-y-8 bg-[#0f172a] text-white py-8">
-    <div class="rounded-full border-4 border-sky-400 p-2">
-      <img src="./me.jpg" width="200" height="200" class="rounded-full hover:scale-105 transition transition" />
+  <body>
+    <div
+      class="w-full bg-[#0f172a] text-white py-4 sticky top-0 opacity-95 max-md:hidden"
+    >
+      <div class="container mx-auto flex justify-between items-center px-8">
+        <div class="text-xl font-bold"><a href="#profil">Biodata</a></div>
+        <div class="space-x-4">
+          <a
+            href="#profil"
+            class="hover:text-lg hover:font-bold transition-all duration-300"
+            >Profil</a
+          >
+          <a
+            href="#alamat"
+            class="hover:text-lg hover:font-bold transition-all duration-300"
+            >Alamat</a
+          >
+          <a
+            href="#website"
+            class="hover:text-lg hover:font-bold transition-all duration-300"
+            >Website Favorit</a
+          >
+          <a
+            href="#video"
+            class="hover:text-lg hover:font-bold transition-all duration-300"
+            >Video Favorit</a
+          >
+        </div>
+      </div>
     </div>
-    <div class="flex flex-col space-y-4 items-center justify-center">
+    <div
+      class="w-full bg-[#0f172a] text-white py-2 sticky top-0 opacity-95 md:hidden flex bg-sky-950 justify-end"
+    >
+      <div class="md:hidden flex pr-4">
+        <button
+          id="mobile-menu-button"
+          class="text-white p-2 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div>
       <div>
-        <h1 class="text-3xl font-bold px-2">Hai, saya Moch. Avin</h1>
-      </div>
-      <div>
-        <table class="border-separate border-spacing-2">
-          <tr>
-            <td>NRP</td>
-            <td>:</td>
-            <td>5025221061</td>
-          </tr>
-          <tr>
-            <td>Alamat tinggal</td>
-            <td>:</td>
-            <td>Asrama ITS</td>
-          </tr>
-          <tr>
-            <td>NO HP</td>
-            <td>:</td>
-            <td>085236871039</td>
-          </tr>
-          <tr>
-            <td>Harapan dengan matkul pbw</td>
-            <td>:</td>
-            <td>Mendapat ilmu baru</td>
-          </tr>
-        </table>
-      </div>
-      <div class="w-full h-auto flex flex-col space-y-4 justify-center items-center">
-        <div class="text-3xl font-[600] max-md:text-sm">Alamat SMA</div>
-        <div class="">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.266865695523!2d112.6799208096497!3d-7.654428475700978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d9381e4967bd%3A0xca04772f2b81d0b7!2sSMA%20NEGERI%201%20PANDAAN!5e0!3m2!1sid!2sid!4v1693655125930!5m2!1sid!2sid"
-            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" class="rounded-xl max-md:w-auto"></iframe>
-        </div>
-      </div>
-      <div class="w-1/2 h-auto flex flex-col space-y-4 justify-center items-center">
-        <div class="text-3xl font-[600] max-md:text-sm">10 Link Website Favorit</div>
-        <div class="flex flex-col w-full text-sky-100 bg-sky-950 font-[600] rounded-xl max-md:w-screen">
-          <div class="flex flex-row">
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://google.com"> Google </a>
-            </div>
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://chat.openai.com/"> ChatGPT </a>
-            </div>
-          </div>
-          <div class="flex flex-row">
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://its.ac.id/"> ITS </a>
-            </div>
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://github.com/"> Github </a>
-            </div>
-          </div>
-          <div class="flex flex-row">
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://www.youtube.com/"> Youtube </a>
-            </div>
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://codeforces.com/"> Codeforces </a>
-            </div>
-          </div>
-          <div class="flex flex-row">
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://www.hackerrank.com/"> Hackerrank </a>
-            </div>
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://tailwindcss.com/"> Tailwind Doc </a>
-            </div>
-          </div>
-          <div class="flex flex-row">
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://otakudesu.lol/"> Otakudesu </a>
-            </div>
-            <div
-              class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
-              <a href="https://atcoder.jp/"> Atcoder </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="text-3xl font-[600] max-md:text-sm">
-        Video Youtube Favorit
-      </div>
-      <div class="flex flex-wrap w-full justify-center">
-        <div>
-          <iframe width="500" height="280" class="px-2 py-2 rounded-2xl max-md:w-auto border mx-2 my-2"
-            src="https://www.youtube-nocookie.com/embed/WsPHBD5NsS0?si=tfzk29TsHocxjwuA" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div>
-          <iframe width="500" height="280" class="px-2 py-2 rounded-2xl max-md:w-auto border mx-2 my-2"
-            src="https://www.youtube-nocookie.com/embed/FU_YFpfDqqA?si=1jWOJZfy2usRPXTQ" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div>
-          <iframe width="500" height="280" class="px-2 py-2 rounded-2xl max-md:w-auto border mx-2 my-2"
-            src="https://www.youtube-nocookie.com/embed/z6ep308goxQ?si=_bUhfuh5qsXu8GHT" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+        <!-- Daftar menu mobile (Default: Hidden) -->
+        <div
+          id="mobile-menu"
+          class="hidden bg-[#0f172a] text-white py-4 fixed w-full items-center justify-center pl-4 transition-all opacity-95"
+        >
+          <a href="#profil" class="block py-2 px-4">Profil</a>
+          <a href="#alamat" class="block py-2 px-4">Alamat</a>
+          <a href="#website" class="block py-2 px-4">Website Favorit</a>
+          <a href="#video" class="block py-2 px-4">Video Favorit</a>
         </div>
       </div>
     </div>
-  </div>
-</body>
 
+    <div
+      class="w-screen h-auto flex justify-center flex-col items-center space-y-8 bg-[#0f172a] text-white py-8 pt-16"
+      id="profil"
+    >
+      <div class="rounded-full border-4 border-sky-400 p-2">
+        <img
+          src="./me.jpg"
+          width="200"
+          height="200"
+          class="rounded-full hover:scale-105 transition transition"
+        />
+      </div>
+      <div class="flex flex-col space-y-4 items-center justify-center">
+        <div>
+          <h1 class="text-3xl font-bold px-2">Hai, saya Moch. Avin</h1>
+        </div>
+        <div>
+          <table class="border-separate border-spacing-2">
+            <tr>
+              <td>NRP</td>
+              <td>:</td>
+              <td>5025221061</td>
+            </tr>
+            <tr>
+              <td>Alamat tinggal</td>
+              <td>:</td>
+              <td>Asrama ITS</td>
+            </tr>
+            <tr>
+              <td>NO HP</td>
+              <td>:</td>
+              <td>085236871039</td>
+            </tr>
+            <tr>
+              <td>Harapan dengan matkul pbw</td>
+              <td>:</td>
+              <td>Mendapat ilmu baru</td>
+            </tr>
+          </table>
+        </div>
+        <div
+          class="w-full h-auto flex flex-col space-y-4 justify-center items-center pt-16"
+          id="alamat"
+        >
+          <div class="text-3xl font-[600] max-md:text-sm">Alamat SMA</div>
+          <div class="">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.266865695523!2d112.6799208096497!3d-7.654428475700978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d9381e4967bd%3A0xca04772f2b81d0b7!2sSMA%20NEGERI%201%20PANDAAN!5e0!3m2!1sid!2sid!4v1693655125930!5m2!1sid!2sid"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-xl max-md:w-auto"
+            ></iframe>
+          </div>
+        </div>
+        <div
+          class="w-1/2 h-auto flex flex-col space-y-4 justify-center items-center pt-16"
+          id="website"
+        >
+          <div class="text-3xl font-[600] max-md:text-sm">
+            10 Link Website Favorit
+          </div>
+          <div
+            class="flex flex-col w-full text-sky-100 bg-sky-950 font-[600] rounded-xl max-md:w-screen"
+          >
+            <div class="flex flex-row">
+              <a
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+                href="https://google.com"
+              >
+                Google
+              </a>
+
+              <a
+                href="https://chat.openai.com/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                ChatGPT
+              </a>
+            </div>
+            <div class="flex flex-row">
+              <a
+                href="https://its.ac.id/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                ITS
+              </a>
+
+              <a
+                href="https://github.com/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Github
+              </a>
+            </div>
+            <div class="flex flex-row">
+              <a
+                href="https://www.youtube.com/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Youtube
+              </a>
+
+              <a
+                href="https://codeforces.com/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Codeforces
+              </a>
+            </div>
+            <div class="flex flex-row">
+              <a
+                href="https://www.hackerrank.com/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Hackerrank
+              </a>
+
+              <a
+                href="https://tailwindcss.com/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Tailwind Doc
+              </a>
+            </div>
+            <div class="flex flex-row">
+              <a
+                href="https://otakudesu.lol/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Otakudesu
+              </a>
+
+              <a
+                href="https://atcoder.jp/"
+                class="basis-1/2 flex justify-center hover:bg-sky-900 py-2 rounded-xl cursor-pointer hover:scale-105 transition"
+                target="_blank"
+              >
+                Atcoder
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-3xl font-[600] max-md:text-sm transition-all duration-300 pt-16"
+          id="video"
+        >
+          Video Youtube Favorit
+        </div>
+        <div class="flex flex-wrap w-full justify-center">
+          <div>
+            <iframe
+              width="500"
+              height="280"
+              class="px-2 py-2 rounded-2xl max-md:w-auto border mx-2 my-2"
+              src="https://www.youtube-nocookie.com/embed/WsPHBD5NsS0?si=tfzk29TsHocxjwuA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div>
+            <iframe
+              width="500"
+              height="280"
+              class="px-2 py-2 rounded-2xl max-md:w-auto border mx-2 my-2"
+              src="https://www.youtube-nocookie.com/embed/FU_YFpfDqqA?si=1jWOJZfy2usRPXTQ"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div>
+            <iframe
+              width="500"
+              height="280"
+              class="px-2 py-2 rounded-2xl max-md:w-auto border mx-2 my-2"
+              src="https://www.youtube-nocookie.com/embed/z6ep308goxQ?si=_bUhfuh5qsXu8GHT"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
 </html>
